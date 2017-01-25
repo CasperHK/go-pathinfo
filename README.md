@@ -1,6 +1,10 @@
 # pathinfo
 
 <br/>
+## Installation
+```bash
+
+```
 
 ## Usage
 ```go
