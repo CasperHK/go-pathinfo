@@ -3,13 +3,20 @@ package main
 import (
     "fmt"
     "path/filepath"
+    "path"
+    "strings"
 )
 
 func main() {
     fmt.Println("Hello World")
     a := NewPath("/home/asb.doc")
     a.Print()
-    fmt.Println(a.HasExtension())
+    fmt.Println(a.Base())
+    fmt.Println(a.Dir())
+    fmt.Println(a.Ext())
+    fmt.Println(a.Name())
+    fmt.Println(a.HasExt())
+    fmt.Println(a.RemoveExt())
 }
 
 type Path struct {
@@ -24,23 +31,32 @@ func (p *Path) Print() {
 	fmt.Println(p.path)
 }
 
-func (p *Path) ExtrDirName() string {
-	return filepath.Ext(p.path)
+func (p *Path) Dir() string {
+    dirn := path.Dir(p.path)
+    return dirn
 }
 
-// func (p *Path) ExtrBaseName() string {
+func (p *Path) Base() string {
+    bn := path.Base(p.path)
+    return bn
+}
 
-// }
+func (p *Path) Ext() string {
+    ext := filepath.Ext(p.path)
+    if ext != "" {
+        ext = strings.TrimPrefix(ext, ".")
+    }
+    return strings.ToLower(ext)
+}
 
-// func (p *Path) ExtrExtension() string {
+func (p *Path) Name() string {
+    var base = path.Base(p.path)
+    var ext = path.Ext(p.path)
+    var name = base[0:len(base)-len(ext)]
+    return name
+}
 
-// }
-
-// func (p *Path) ExtrFileName() string {
-
-// }
-
-func (p *Path) HasExtension() bool {
+func (p *Path) HasExt() bool {
 	if filepath.Ext(p.path) == "" {
 		return false
 	} else {
@@ -48,7 +64,15 @@ func (p *Path) HasExtension() bool {
 	}
 }
 
+func (p *Path) RemoveExt() string {
+    ext := path.Ext(p.path)
+    var pathWithoutExt string
+    if ext != "" {
+        pathWithoutExt = strings.TrimSuffix(p.path, ext)
+    }
+    return pathWithoutExt
+}
+
 // func (p *Path) MoveUp(numOfLevel int) Path {
 // 	return Path{path: ""}
 // }
-
