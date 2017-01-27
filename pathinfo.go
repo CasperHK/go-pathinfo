@@ -76,3 +76,31 @@ func (p *Path) RemoveExt() string {
 // func (p *Path) MoveUp(numOfLevel int) Path {
 // 	return Path{path: ""}
 // }
+
+// func (p *Path) ValidateExt(validExts []string) string {
+
+// }
+
+// func (p *Path) ValidateNotExt(invalidExts []string) string {
+
+// }
+
+// func (p *Path) IsFromUnixLike() bool {
+
+// }
+
+// func (p *Path) IsFromWindow() bool {
+
+// }
+
+// func (p *Path) IsBaseOnly() bool {
+
+// }
+
+// func (p *Path) IsAbs() bool {} {
+
+// }
+
+// func (p *Path) IsRel() bool {
+	
+// }
