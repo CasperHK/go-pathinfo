@@ -28,4 +28,5 @@ fmt.Println(path.IsExt([]string{"php", "doc"}))
 fmt.Println(path.IsNotExt([]string{"php", "doc"}))
 fmt.Println(path.IsFromUnixLike())
 fmt.Println(path.IsFromWindow())
+fmt.Println(path.IsOnlyBaseName())
 ```
