@@ -3,10 +3,15 @@
 <br/>
 ## Installation
 ```bash
-
+go get github.com/CasperHK/pathinfo
 ```
 
 ## Usage
+```go
+import {
+    "github.com/CasperHK/pathinfo"
+}
+```
 ```go
 path := pathinfo.NewPath("/www/htdocs/inc/lib.inc.php")
 
