@@ -14,4 +14,9 @@ fmt.Println(path.ExtrDirName())
 fmt.Println(path.ExtrBaseName())
 fmt.Println(path.ExtrExtension())
 fmt.Println(path.ExtrFileName())
+
+fmt.Println(path.HasExtension())
+fmt.Println(path.MoveUp(2))
+fmt.Println(path.IsRelative())
+fmt.Println(path.IsAbsolute())
 ```
