@@ -19,4 +19,6 @@ fmt.Println(path.HasExtension())
 fmt.Println(path.MoveUp(2))
 fmt.Println(path.IsRelative())
 fmt.Println(path.IsAbsolute())
+fmt.Println(path.IsExt([]string{"php", "doc"}))
+fmt.Println(path.IsNotExt([]string{"php", "doc"}))
 ```
