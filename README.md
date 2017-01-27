@@ -1,4 +1,4 @@
-# pathinfo
+# PathBa
 
 <br/>
 ## Installation
@@ -15,10 +15,10 @@ import {
 ```go
 path := pathinfo.NewPath("/www/htdocs/inc/lib.inc.php")
 
-fmt.Println(path.ExtrDirName())
-fmt.Println(path.ExtrBaseName())
-fmt.Println(path.ExtrExtension())
-fmt.Println(path.ExtrFileName())
+fmt.Println(path.Dir())
+fmt.Println(path.Base())
+fmt.Println(path.Ext())
+fmt.Println(path.Name())
 
 fmt.Println(path.HasExtension())
 fmt.Println(path.MoveUp(2))
